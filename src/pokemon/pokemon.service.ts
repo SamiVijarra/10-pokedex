@@ -55,7 +55,10 @@ export class PokemonService {
       });
     }
 
-    if (!pokemon) throw new NotFoundException(`Pokemon '${term}' not found`);
+    if (!pokemon)
+      throw new NotFoundException(
+        `Pokemon with id, name or no '${term}' not found`,
+      );
 
     return pokemon;
   }
